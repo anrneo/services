@@ -1,0 +1,53 @@
+
+    <div class="container">
+      <div class="container">
+          <div class="card-panel">
+        <h4 *ngIf="registrar">Iniciar sesión</h4> 
+        <h4 *ngIf="!registrar">Registrar Usuario</h4> 
+        <br>
+        <form  #registerForm="ngForm" >
+        
+          <div class="input-field">
+            <input type="email" class="validate" id="email" required 
+            (keyup)="confirmEmail(model.email)" (blur)="confirmEmail(model.email)"
+            [(ngModel)]="model.email" name="email">
+            <label for="email">Email</label>
+          </div>
+    
+          <div class="input-field">
+            <input type="password" class="validate" id="password" required (keyup)="countPass()"
+            [(ngModel)]="model.password" name="password">
+            <label for="password">Password  (mínimo 6 carácteres)</label>
+            <span class="new badge" data-badge-caption="/ 6">{{lengPass}}</span>
+          </div>
+    
+          <div class="input-field" *ngIf="!registrar">
+            <input type="password" class="validate" id="Confirm_password" required  (keyup)="countPass()"
+            (keyup)="confirmPass()"
+            [(ngModel)]="model.confirm_password" name="confirm_password">
+            <label for="Confirm_password">Confirma el Password
+                <i *ngIf="Confirm_password" class="material-icons Small" style="color:green">check_circle</i>   
+            </label>
+            <span class="new badge" data-badge-caption="/ 6">{{lengPassCon}}</span>
+          </div>
+
+          <div class="progress" *ngIf="preloader">
+            <div class="indeterminate"></div>
+        </div>
+        <div *ngIf="submitLogin">
+          <a *ngIf="registrar" (click)="register()">Registrar</a>
+          <a *ngIf="!registrar" (click)="login()">Login</a>
+          <button *ngIf="!registrar" class="btn waves-effect waves-light btn-small" style="float: right;"  
+          [disabled]="!registerForm.form.valid || !Confirm_password || !emailConfirm" (click)="add()">
+          Crear cuenta<i class="material-icons right">send</i>
+        </button>
+        <button *ngIf="registrar" class="btn waves-effect waves-light btn-small" style="float: right;"  
+        [disabled]="!registerForm.form.valid || !emailConfirm" (click)="loginadd()">
+        Login<i class="material-icons right">send</i>
+      </button>
+        </div>
+        </form>
+ <br>
+    </div>
+  </div>
+  </div>

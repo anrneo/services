@@ -1,0 +1,93 @@
+<br>
+<div class="container">
+  <div class="card-panel">
+<h4>Crear Orden</h4> 
+<br>
+<form  #registerForm="ngForm" >
+  <div class="row">
+    <div class="col s6">
+      <div class="input-field">
+        <input type="text" class="validate" id="cliente" required 
+        [(ngModel)]="model.cliente" name="cliente">
+        <label for="cliente">Cliente</label>
+      </div>
+    </div>
+    <div class="col s6">
+      <label>Técnico</label>
+      <select class="browser-default" name="user_id"  [(ngModel)]="model.user_id" required>
+        <option value=""  disabled selected>Selecciona...</option>
+        <option *ngFor="let user of users" value="{{user.id}}">{{user.email}}</option>
+      </select>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="col s4">
+      <input type="hidden"  [(ngModel)]="arti.id" name="id">
+      <div class="input-field">
+        <input type="text" class="validate" id="articulo"  
+        [(ngModel)]="arti.articulo" name="articulo">
+        <label for="articulo">Nombre artículo</label>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="input-field">
+        <input type="text" class="validate" id="tipo"  
+        [(ngModel)]="arti.tipo" name="tipo">
+        <label for="tipo">Tipo artículo</label>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="input-field">
+        <input type="text" class="validate" id="sku"  
+        [(ngModel)]="arti.sku" name="sku">
+        <label for="sku">SKU artículo</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+  <button *ngIf="!btn_articulo" class="btn waves-effect waves-light btn-small blue" style="float: right;"  
+  (click)="editArticulo()">
+  Actualizar Articulo</button>
+<button *ngIf="btn_articulo" class="btn waves-effect waves-light btn-small" style="float: right;"  
+(click)="addArticulo()">
+Adicionar Articulo</button>
+</div>
+
+<table *ngIf="tableArt">
+  <thead>
+    <tr>
+        <th>Artículo</th>
+        <th>Tipo</th>
+        <th>SKU</th>
+        <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let art of articulos, let i=index">
+      <td>{{art.articulo}}</td>
+      <td>{{art.tipo}}</td>
+      <td>{{art.sku}}</td>
+      <td> <a (click)="editArt(i)" class="waves-effect waves-light btn-small blue"><i class="material-icons">edit</i></a>
+        <a (click)="deleteArt(i)" class="waves-effect waves-light btn-small red"><i class="material-icons">delete</i></a>
+      </td>
+    </tr>
+ 
+  </tbody>
+</table>
+  <div class="progress" *ngIf="preloader">
+    <div class="indeterminate"></div>
+</div>
+<div *ngIf="submitLogin">
+  <button class="btn waves-effect waves-light btn-small" style="float: right;"  
+  [disabled]="!registerForm.form.valid || articulos.length==0" (click)="addOrden()">
+  Crear Orden<i class="material-icons right">send</i>
+</button>
+
+</div>
+</form>
+<br>
+</div>
+</div>

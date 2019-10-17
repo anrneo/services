@@ -1,0 +1,36 @@
+<br>
+<br>
+<div class="container">
+  <h6>Reporte por cliente</h6>
+    <form  #registerForm="ngForm" >
+        <div class="row">
+         
+          
+          <div class="col s6">
+            <label>cliente</label>
+            <select class="browser-default" required [(ngModel)]="model.cliente" name="cliente" (change)="changeSelec()">
+              <option value=""  disabled selected>Selecciona...</option>
+              <option *ngFor="let cli of clientes" value="{{cli}}">{{cli}}</option>
+            </select>
+          </div>
+        </div>
+       
+      
+      
+     
+      
+   
+        <div class="progress" *ngIf="preloader">
+          <div class="indeterminate"></div>
+      </div>
+      <div *ngIf="submitLogin">
+        <button class="btn waves-effect waves-light btn-small" style="float: right;"  
+        [disabled]="!registerForm.form.valid" (click)="addOrden()">
+        Crear Reporte<i class="material-icons right">send</i>
+      </button>
+      
+      </div>
+      </form>
+      <br>
+      <p>{{json}}</p>
+</div>
