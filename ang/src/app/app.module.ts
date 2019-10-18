@@ -12,9 +12,9 @@ import { OrdenComponent } from './orden/orden.component';
 import { ReporteComponent } from './reporte/reporte.component';
 
 @NgModule({
-  declarations: [
+  declarations: [   
     AppComponent,
-    HomeComponent,
+    HomeComponent,   
     LoginComponent,
     OrdenComponent,
     ReporteComponent
