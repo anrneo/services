@@ -12,7 +12,7 @@ export class ReporteComponent implements OnInit {
     private apiService: ApiService
 
   ) { }
-  model:any = {}
+  model: any = {};
 json = ''
   preloader = false
   submitLogin = true

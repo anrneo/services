@@ -169,7 +169,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  <nav>\n    <div class=\"nav-wrapper\">\n      <a href=\"#\" class=\"brand-logo\">ServiceTechnologies</a>\n      <a href=\"#\" data-target=\"mobile-demo\" class=\"sidenav-trigger\"><i class=\"material-icons\">menu</i></a>\n      <ul class=\"right hide-on-med-and-down\">\n        <li *ngIf=\"isLogin()\"><a [routerLink]=\"['home', userId]\">Home</a></li>\n        <li><a routerLink=\"orden\">Crear Orden</a></li>\n        <li><a routerLink=\"report\">Reportes</a></li>\n        <li *ngIf=\"!isLogin()\"><a routerLink=\"login\">Login</a></li>\n        <li *ngIf=\"isLogin()\" (click)=\"logout()\"><a>Logout</a></li>\n      </ul>\n    </div>\n  </nav>\n  <ul class=\"sidenav\" id=\"mobile-demo\">\n    <li *ngIf=\"isLogin()\"><a [routerLink]=\"['home', userId]\">Home</a></li>\n    <li><a routerLink=\"orden\">Crear Orden</a></li>\n    <li><a routerLink=\"report\">Reportes</a></li>\n    <li *ngIf=\"!isLogin()\"><a routerLink=\"login\">Login</a></li>\n    <li *ngIf=\"isLogin()\" (click)=\"logout()\"><a>Logout</a></li>\n  </ul>\n  <router-outlet></router-outlet>"
+module.exports = "\n  <nav>\n    <div class=\"nav-wrapper\">\n      <a  class=\"brand-logo\">ServiceTechnologies</a>\n      <a href=\"#\" data-target=\"mobile-demo\" class=\"sidenav-trigger\"><i class=\"material-icons\">menu</i></a>\n      <ul class=\"right hide-on-med-and-down\">\n        <li *ngIf=\"isLogin()\"><a [routerLink]=\"['home', userId]\">Home</a></li>\n        <li><a routerLink=\"orden\">Crear Orden</a></li>\n        <li><a routerLink=\"report\">Reportes</a></li>\n        <li *ngIf=\"!isLogin()\"><a routerLink=\"login\">Login</a></li>\n        <li *ngIf=\"isLogin()\" (click)=\"logout()\"><a>Logout</a></li>\n      </ul>\n    </div>\n  </nav>\n  <ul class=\"sidenav\" id=\"mobile-demo\">\n    <li *ngIf=\"isLogin()\"><a [routerLink]=\"['home', userId]\">Home</a></li>\n    <li><a routerLink=\"orden\">Crear Orden</a></li>\n    <li><a routerLink=\"report\">Reportes</a></li>\n    <li *ngIf=\"!isLogin()\"><a routerLink=\"login\">Login</a></li>\n    <li *ngIf=\"isLogin()\" (click)=\"logout()\"><a>Logout</a></li>\n  </ul>\n  <router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -867,7 +867,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/anreno/Documents/servicestech/ang/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /var/www/html/ang/src/main.ts */"./src/main.ts");
 
 
 /***/ })

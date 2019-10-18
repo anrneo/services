@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { OrdenComponent } from './orden/orden.component';
 
 
-const routes: Routes = [    
+const routes: Routes = [
   {  path: '', redirectTo: '/login', pathMatch: 'full' },
    { path: 'home/:id', component: HomeComponent },
    { path: 'orden', component: OrdenComponent },
@@ -14,7 +14,7 @@ const routes: Routes = [
    { path: '**', component: LoginComponent }
 ];
 
-@NgModule({   
+@NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
