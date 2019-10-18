@@ -11,12 +11,12 @@ export class ApiService {
 
   ) { }
 
-  private url_base = 'http://127.0.0.1:8000';  // URL to web api
+  private url_base = 'https://bitplacecoin.com/api_lar/public';  // URL to web api
 
 
   addUser(model){     
     const url = `${this.url_base}/api/adduser`;
-    return this.http.post(url, model)
+    return this.http.post(url, model)   
   
   }
 

@@ -49,7 +49,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ApiService = /** @class */ (function () {
     function ApiService(http) {
         this.http = http;
-        this.url_base = 'http://127.0.0.1:8000'; // URL to web api
+        this.url_base = 'https://bitplacecoin.com/api_lar/public'; // URL to web api
     }
     ApiService.prototype.addUser = function (model) {
         var url = this.url_base + "/api/adduser";
