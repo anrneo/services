@@ -35,13 +35,13 @@ export class ApiService {
     return this.http.get(url)  
     } 
 
-    getUser (id) {        
+    getUser (id) {           
       const url = `${this.url_base}/api/getuser/${id}`; 
     return this.http.get(url)  
     } 
-    getClientes () {        
+    getClientes () {           
       const url = `${this.url_base}/api/getclientes`; 
-    return this.http.get(url)  
+    return this.http.get(url)     
     } 
     getReport (cli) {        
       const url = `${this.url_base}/api/getreport/${cli}`; 
