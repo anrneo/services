@@ -11,7 +11,7 @@ export class ApiService {
 
   ) { }
 
-  private url_base = 'https://bitplacecoin.com/api_lar/public';  // URL to web api
+  public url_base = 'https://bitplacecoin.com/api_lar/public';  // URL to web api
 
 
   addUser(model){     

@@ -2,7 +2,8 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">ServiceTechnologies</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <li *ngIf="isLogin()"><a [routerLink]="['home', userId]">Home</a></li>
         <li><a routerLink="orden">Crear Orden</a></li>
         <li><a routerLink="report">Reportes</a></li>
@@ -11,5 +12,11 @@
       </ul>
     </div>
   </nav>
-
+  <ul class="sidenav" id="mobile-demo">
+    <li *ngIf="isLogin()"><a [routerLink]="['home', userId]">Home</a></li>
+    <li><a routerLink="orden">Crear Orden</a></li>
+    <li><a routerLink="report">Reportes</a></li>
+    <li *ngIf="!isLogin()"><a routerLink="login">Login</a></li>
+    <li *ngIf="isLogin()" (click)="logout()"><a>Logout</a></li>
+  </ul>
   <router-outlet></router-outlet>

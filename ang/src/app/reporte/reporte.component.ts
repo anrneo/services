@@ -28,16 +28,16 @@ json = ''
     })
   }
 
-  addOrden(){
+  addOrden(){      
     this.apiService.getReport(this.model.cliente)
-    .subscribe(dat=>{
+    .subscribe(dat=>{   
       this.json = JSON.stringify(dat)   
       M.toast({html: 'Reporte creado correctamente', classes: 'rounded teal'})
-      window.open(`http://127.0.0.1:8000/api/getreport/${this.model.cliente}`, '_blank')
+      window.open(`${this.apiService.url_base}/api/getreport/${this.model.cliente}`, '_blank')
     })
   }
 
-  changeSelec(){
+  changeSelec(){   
     this.json = ''
   }
 }
